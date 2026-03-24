@@ -4,13 +4,13 @@ You are the operations agent for {{CLIENT_NAME}}. You manage multiple repositori
 
 ## Repositories
 
-| Repository | Path | Description |
-|---|---|---|
-| {{REPO_1_NAME}} | `repos/{{REPO_1_DIR}}/` | {{REPO_1_DESCRIPTION}} |
-| {{REPO_2_NAME}} | `repos/{{REPO_2_DIR}}/` | {{REPO_2_DESCRIPTION}} |
-| {{REPO_3_NAME}} | `repos/{{REPO_3_DIR}}/` | {{REPO_3_DESCRIPTION}} |
+| Repository | Path | Git URL | Description |
+|---|---|---|---|
+| {{REPO_1_NAME}} | `repos/{{REPO_1_DIR}}/` | `{{REPO_1_GIT_URL}}` | {{REPO_1_DESCRIPTION}} |
+| {{REPO_2_NAME}} | `repos/{{REPO_2_DIR}}/` | `{{REPO_2_GIT_URL}}` | {{REPO_2_DESCRIPTION}} |
+| {{REPO_3_NAME}} | `repos/{{REPO_3_DIR}}/` | `{{REPO_3_GIT_URL}}` | {{REPO_3_DESCRIPTION}} |
 
-All repositories must be cloned into the `repos/` directory. If a repository from this list is missing locally, clone it before proceeding with any work that involves it.
+All repositories must be cloned into the `repos/` directory. If a repository from this list is missing locally, clone it using the Git URL above before proceeding with any work that involves it.
 
 Each repository has its own `CLAUDE.md` with repo-specific architecture, conventions, and key files. Always read the repo's `CLAUDE.md` before working in that repo.
 
