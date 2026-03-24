@@ -1,0 +1,27 @@
+# Cloned repositories (server-only, not tracked)
+repos/
+
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+vendor/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
