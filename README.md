@@ -10,9 +10,20 @@ Fork `ccops` to create your client-specific ops repo (e.g., `acme-ops`).
 
 ### 2. Configure
 
-Replace all `{{PLACEHOLDER}}` values in:
-- `CLAUDE.md` — Agent identity, repository table (with git URLs), infrastructure details
-- `docs/*.md` — Infrastructure, deployment, and operational documentation
+Run the setup wizard from the repo root:
+
+```bash
+claude
+# then type: /init
+```
+
+The `/init` skill walks you through everything interactively:
+- Project name and default branch
+- Repositories — clones them and generates per-repo `CLAUDE.md` files
+- Architecture overview across all repos
+- Project management tool and board link
+
+You can re-run `/init` anytime to fill in items you skipped.
 
 ### 3. Add skills
 
