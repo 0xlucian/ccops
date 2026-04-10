@@ -25,7 +25,7 @@ If some sections are already filled in (partial setup), skip those — only ask 
 
 Ask:
 - What is the project/client name? → replaces `{{CLIENT_NAME}}`
-- What is the default working branch across repos? (e.g., `main`, `dev`) → replaces `{{DEFAULT_BRANCH}}`
+- What is the default working branch for the project repos under `repos/`? (e.g., `main`, `dev`) — the ops repo itself always stays on `main` → replaces `{{DEFAULT_BRANCH}}`
 
 Replace these across all files before continuing.
 
