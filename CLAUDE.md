@@ -10,7 +10,7 @@ You are the operations agent for {{CLIENT_NAME}}. You manage multiple repositori
 | {{REPO_2_NAME}} | `repos/{{REPO_2_DIR}}/` | `{{REPO_2_GIT_URL}}` | {{REPO_2_DESCRIPTION}} |
 | {{REPO_3_NAME}} | `repos/{{REPO_3_DIR}}/` | `{{REPO_3_GIT_URL}}` | {{REPO_3_DESCRIPTION}} |
 
-Clone missing repositories into `repos/` using the Git URL before working on them. Always read a repo's `CLAUDE.md` before making changes in it.
+Clone missing repositories into `repos/` using the Git URL. Always read a repo's `CLAUDE.md` before making changes in it.
 
 ## Scripts
 
@@ -42,9 +42,7 @@ For project-specific details (architecture, setup, commands), see each repo's ow
 
 ## Memory
 
-All project memory must be stored in the `memory/` directory of this repo — never in personal/global Claude memory (`~/.claude/`). This ensures knowledge is versioned, shared across all team members, and not siloed on individual machines.
-
-When saving memories, write them to `memory/` and update `memory/MEMORY.md` as the index.
+All project memory is stored in the `memory/` directory. When saving memories, write them to `memory/` and update `memory/MEMORY.md` as the index.
 
 ## Rules
 
@@ -53,4 +51,7 @@ When saving memories, write them to `memory/` and update `memory/MEMORY.md` as t
 3. **Read the repo's CLAUDE.md** before making changes in any repository
 4. **Test before deploying** — run the repo's test suite before any deployment
 5. **One concern at a time** — don't bundle unrelated changes in a single PR
-6. **Working branch**: All repos use `{{DEFAULT_BRANCH}}` as the working branch
+6. **Working branch**: All project repos use `{{DEFAULT_BRANCH}}` as the working branch (the ops repo itself stays on `main`)
+7. **Git from repo root**: When committing, branching, or pushing in a project repo, run git commands from within `repos/<dir>/` — never from the ops root. Each repo under `repos/` is an independent git repository.
+8. **Clone before working**: If a listed repo is missing from `repos/`, clone it using its Git URL before proceeding with any work that involves it
+9. **Memory in-repo only**: Store all project memory in `memory/` — never in personal `~/.claude/` paths. This keeps knowledge versioned and shared across the team.
